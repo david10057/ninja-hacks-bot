@@ -43,6 +43,10 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
+app.get('/webby', function (req, res) {
+    sendTextMessage(961412277261789, "webby")
+})
+
 function sendTextMessage(sender, text) {
     messageData = {
         text:text
