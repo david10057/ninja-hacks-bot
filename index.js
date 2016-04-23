@@ -47,6 +47,8 @@ app.get('/users/:user/:message', function (req, res) {
 	var username = req.params.user;
 	var message = req.params.message;
     sendTextMessage(username, message);
+    console.log('running on port')
+    res.send("")
 })
 
 function sendTextMessage(sender, text) {
