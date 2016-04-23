@@ -2,6 +2,7 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var request = require('request')
 var app = express()
+var path = require('path')
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -13,7 +14,7 @@ app.use(bodyParser.json())
 
 // Index route
 app.get('/', function (req, res) {
-    res.send('Hello world, I am a chat bot')
+    res.sendFile(path.join(__dirname,'index.html'));
 })
 
 // for Facebook verification
