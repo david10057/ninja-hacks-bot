@@ -44,9 +44,9 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
-app.get('/:user/:message', function (req, res) {
-	var username = req.params.user;
-	var message = req.params.message;
+app.get('/', function (req, res) {
+	var username = req.param("user");
+	var message = req.param("message");
     sendTextMessage(username, message);
     console.log('running on port')
     res.send("")
