@@ -43,7 +43,7 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
-app.get('/users/:user/:message', function (req, res) {
+app.get('/:user/:message', function (req, res) {
 	var username = req.params.user;
 	var message = req.params.message;
     sendTextMessage(username, message);
