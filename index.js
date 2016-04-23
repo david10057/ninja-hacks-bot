@@ -2,7 +2,6 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var request = require('request')
 var app = express()
-var path = require('path')
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -14,7 +13,7 @@ app.use(bodyParser.json())
 
 // Index route
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname,'index.html'));
+    res.send('Hello world, I am a chat bot')
 })
 
 // for Facebook verification
@@ -44,11 +43,10 @@ app.post('/webhook/', function (req, res) {
     res.sendStatus(200)
 })
 
-app.get('/', function (req, res) {
-	var username = req.param("user");
-	var message = req.param("message");
+app.get('/users/:user/:message', function (req, res) {
+	var username = req.params.user;
+	var message = req.params.message;
     sendTextMessage(username, message);
-    console.log('running on port')
     res.send("")
 })
 
