@@ -13,7 +13,7 @@ app.get("/", function(req, res) {
 
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+    if (req.query['hub.verify_token'] === '<sectret_verifier>') {
         res.send(req.query['hub.challenge'])
     }
     res.send('Error, wrong token')
@@ -73,7 +73,7 @@ function sendTextMessage(sender, text) {
 }
 
 
-var token = "CAAD6rRCtrZAoBAJlHoSv5Bwno5vqd6zEV3Hq9wTTh1CZB9PMm9SSyZBT1xINjZAZBa5VfN3kxNnkUdUCXGKdxWJHrxjVkQlrHZCeZCfeYZBVCoPU9pNgihhGjxVUZAf92HXkVnobo7UYJtpERL5kHLVGoH6hBzGhG1FLeTMTPDV21QaWYCEsgbv6lLp8sxGJLyCgZD"
+var token = "<secret token>"
 
 
 }
